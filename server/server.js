@@ -28,17 +28,10 @@ app.route('/api/countries')
 })
 .post(async(req, res) => {
     const countries = await reader(filePath);
-    // if (countries.length === 0) {
-    //     countries.push(req.body);
-    // }
-    // if(countries.length > 0) {
-    // if(countries[countries.length-1].name.common !== req.body.name.common) {
-    //   countries.push(req.body);
-    // }
-    // }
+    console.log(countries);
     countries.push(req.body);
-    res.send("hi");
-    writer(filePath, countries)
+    writer(filePath, countries);
+    return res.send("Done");
 })
 
 

@@ -35,7 +35,6 @@ function App() {
   }, []);
 
   const testPost = async (country) => {
-    // window.location.reload();
     const response = await fetch(`http://127.0.0.1:5000/api/countries`, {
       method: "POST",
       headers: {
@@ -46,6 +45,7 @@ function App() {
     const btn = document.getElementById(country.name.common);
     btn.textContent = "-";
   };
+  
 
   const handleCountryInfo = (inf) => {
     setCountryInfo(inf);
