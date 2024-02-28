@@ -27,7 +27,6 @@ function App() {
     const data = await response.json();
     setData(data);
     setCopyData(data);
-    // console.log(data)
   };
 
   useEffect(() => {
@@ -63,15 +62,6 @@ function App() {
     currentCountry.independent = data.independent;
     currentCountry.startOfWeek = data.startOfWeek;
   };
-
-  //ANOTHER WAY OF COPY OBJECT-SLICE()
-  // const sortCountriesAscending = () => {
-  //   setData((prevData) => prevData.slice().sort((a, b) => a.name.common.localeCompare(b.name.common)));
-  // };
-
-  // const sortCountriesDescending = () => {
-  //   setData((prevData) => prevData.slice().sort((a, b) => b.name.common.localeCompare(a.name.common)));
-  // };
 
   const sortCountriesAscending = () => {
     const sortedData = [...data].sort((a, b) =>
